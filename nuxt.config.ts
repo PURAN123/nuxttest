@@ -11,4 +11,12 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/scripts'
   ],
+  plugins: [
+    { src: '~/plugin/vue-google-maps.js', mode: 'client' },
+  ],
+  runtimeConfig: {
+    public: {
+      GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY
+    }
+  }
 })
