@@ -9,11 +9,11 @@ import { GoogleMap } from 'vue3-google-map';
 
 export default defineNuxtPlugin((nuxtApp) => {
     const config = useRuntimeConfig()
-    const apiKey = config.public.GOOGLE_MAPS_API_KEY || process.env.GOOGLE_MAPS_API_KEY
+    const apiKey = config.public.googleMapApiKey || process.env.GOOGLE_MAP_API_KEY
     
     // More detailed API key validation
     if (!apiKey) {
-        console.error('Google Maps API key is not configured. Please add GOOGLE_MAPS_API_KEY to your .env file')
+        console.error('Google Maps API key is not configured. Please add GOOGLE_MAP_API_KEY to your .env file')
         return
     }
 

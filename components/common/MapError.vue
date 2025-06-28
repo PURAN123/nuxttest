@@ -12,7 +12,7 @@
                 <p class="mt-4"><strong>For developers:</strong></p>
                 <ol>
                     <li>Add your Google Maps API key to the .env file:</li>
-                    <code>GOOGLE_MAPS_API_KEY=your_api_key_here</code>
+                    <code>GOOGLE_MAP_API_KEY=your_api_key_here</code>
                     <li>Make sure the API key is enabled for Maps JavaScript API in the Google Cloud Console</li>
                     <li>Check that your API key's restrictions (if any) allow this domain</li>
                 </ol>

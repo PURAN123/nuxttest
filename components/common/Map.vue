@@ -1,9 +1,9 @@
 <template>
     <div class="map-container">
-        <GoogleMap v-if="!hasError" api-key="AIzaSyArXMfcuU-hIfVKZbAhT_xfvJSfRjfjC_c" map-id="174da4ccdec73090"
+        <GoogleMap v-if="!hasError" :api-key="apiKey" :map-id="mapId"
             :libraries="$googleMapsLibraries" style="width: 100%; height: 100%" :center="center" :zoom="zoom"
             @error="handleError" :map-options="{
-                mapId: '174da4ccdec73090'
+                mapId: mapId
             }">
             <Marker :position="center" :options="{
                 icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
@@ -23,13 +23,17 @@
 import { ref } from 'vue'
 import MapError from './MapError.vue'
 import { GoogleMap, Marker } from 'vue3-google-map'
+import { useRuntimeConfig } from '#app'
 const hasError = ref(false)
 const zoom = ref(15)
 const center = ref({ lat: 40.689247, lng: -74.044502 })
-
+const config = useRuntimeConfig()
 const handleError = () => {
     hasError.value = true
 }
+
+const apiKey = config.public.googleMapApiKey
+const mapId = config.public.googleMapMapId
 </script>
 
 <style scoped>
