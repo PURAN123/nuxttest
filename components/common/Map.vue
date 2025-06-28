@@ -26,7 +26,7 @@ import { GoogleMap, Marker } from 'vue3-google-map'
 import { useRuntimeConfig } from '#app'
 const hasError = ref(false)
 const zoom = ref(15)
-const center = ref({ lat: 40.689247, lng: -74.044502 })
+const center = ref({ lat: 28.988791, lng: 79.4326051 })
 const config = useRuntimeConfig()
 const handleError = () => {
     hasError.value = true
